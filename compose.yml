@@ -1,0 +1,28 @@
+services:
+  tradebot:
+    build: .
+    container_name: steam-tradebot
+    restart: unless-stopped
+
+    environment:
+      ASF_URL: http://steam-asf:1242
+      ASF_PASSWORD_FILE: /run/secrets/asf_ipc_password
+      DB_PATH: /data/tradebot.db
+
+    volumes:
+      - ./data:/data
+      - ./tests:/app/tests
+
+    secrets:
+      - asf_ipc_password
+
+    networks:
+      - asf_default
+
+networks:
+  asf_default:
+    external: true
+
+secrets:
+  asf_ipc_password:
+    file: ../asf/config/.ipc-password

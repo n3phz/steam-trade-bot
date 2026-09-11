@@ -1,0 +1,42 @@
+# Secrets / environment
+.env
+.env.*
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime / databases
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/*.db.*
+*.sqlite
+*.sqlite3
+
+# Logs / runtime files
+*.log
+logs/
+tmp/
+.cache/
+
+# Project backups
+*.bak
+*.bak-*
+*.backup
+*.backup-*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
